@@ -45,6 +45,7 @@ TO deploy everything to AWS use:
     region and aws-profile options are optional (if not set via env variables, etc.)
 
 After a global deployment to AWS it can be used via API calls with a query instring in the following format:
+
     `curl https://<api_hostname>/dev/parse-wiki?title=Spain`
 
 Public JSON file with results can be found here:
