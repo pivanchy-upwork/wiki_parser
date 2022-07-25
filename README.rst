@@ -17,10 +17,12 @@ For environment setup it's recommended to activate virtual environment:
       https://docs.python.org/3/tutorial/venv.html
 
 After virtualenv activation install all required dependencies:
-    pip install -t src/vendor -r aws_requirements.txt
+
+    `pip install -t src/vendor -r aws_requirements.txt`
 
 
 For the very basic local setup (without using AWS services, serverless deployment, etc.) we can just run it:
+
     `python src/handler.py --local True --title "Washington,_D.C."`
 
 For using AWS services some additional setup is required for Serverless framework.
@@ -30,12 +32,15 @@ Details can be found in official guide:
 User/profile should be used with access to use CloudFormation, put items to S3 buckets, execute lambda functions, etc.
 
 For local triggering AWS lambda function using serverless you can use the following:
+
     `sls invoke local --function wiki_handler --data '{"queryStringParameters":{"title": "Iceland"}}' --region eu-central-1 --aws-profile serverless`
 
     where `eu-central-1` should be valid for the region where environment has been created
+    
     `serverless` (optional) name of profile for AWS user with valid credentials.
 
 TO deploy everything to AWS use:
+
     `sls deploy --region eu-central-1 --aws-profile serverless`
     region and aws-profile options are optional (if not set via env variables, etc.)
 
