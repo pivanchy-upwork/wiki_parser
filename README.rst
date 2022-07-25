@@ -35,7 +35,7 @@ For local triggering AWS lambda function using serverless you can use the follow
 
     `sls invoke local --function wiki_handler --data '{"queryStringParameters":{"title": "Iceland"}}' --region eu-central-1 --aws-profile serverless`
 
-    where `eu-central-1` should be valid for the region where environment has been created
+where `eu-central-1` should be valid for the region where environment has been created
     
     `serverless` (optional) name of profile for AWS user with valid credentials.
 
